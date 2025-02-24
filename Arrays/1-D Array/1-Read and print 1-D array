@@ -1,3 +1,5 @@
+// Write C program to read n elements into the array and print it
+
 #include<stdio.h>
 int main()
 {
