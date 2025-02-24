@@ -1,0 +1,37 @@
+// Write a C program to search for an element(Linear search)
+
+#include<stdio.h>
+int main()
+{
+   int num[50],n,i,x;
+   //  Read how many numbers in variable n
+   printf("Enter how many numbers  : ");
+   scanf("%d", &n);
+
+   // Read n elements into the array
+   printf("Enter the %d elements:\n", n);
+   for(i=0;i<n;i++)
+      scanf("%d", &num[i]);
+
+  // Print the array elemnts
+   printf("The elemnts are: ");
+   for(i=0;i<n;i++)
+      printf("%d ", num[i]);
+
+  // read element to be searched
+   printf("\nEnter the element to be searched: ");
+   scanf("%d", &x);
+
+  // Search for the element x in array num
+   for(i=0;i<n;i++)
+   {
+      if(x==num[i])
+      {
+         printf("The element %d at index %d", x, i);
+         break;
+      }
+   }
+   if(i==n)
+    printf("Unsuccessful search");
+   return 0;
+}
