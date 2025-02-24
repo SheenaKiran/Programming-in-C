@@ -1,0 +1,107 @@
+// Write a C program to add 2 matrices
+
+#include<stdio.h>
+int main()
+{
+   int a[50][50],b[50][50],c[50][50],r1,c1,r2,c2,i,j;
+   printf("Enter the size of the first 2-D array : ");
+   scanf("%d %d", &r1, &c1);
+   printf("Enter the elements of first 2-D array:\n");
+
+   for(i=0;i<r1;i++)
+     for(j=0;j<c1;j++)
+       scanf("%d", &a[i][j]);
+
+   printf("Enter the size of the second 2-D array : ");
+   scanf("%d %d", &r2, &c2);
+   printf("Enter the elements of second 2-D array:\n");
+
+   for(i=0;i<r2;i++)
+     for(j=0;j<c2;j++)
+       scanf("%d", &b[i][j]);
+
+   printf("First matrix is \n");
+   for(i=0;i<r1;i++)
+     {
+     for(j=0;j<c1;j++)
+       printf("%d ", a[i][j]);
+     printf("\n");
+     }
+    printf("Second matrix is \n");
+   for(i=0;i<r2;i++)
+     {
+     for(j=0;j<c2;j++)
+       printf("%d ", b[i][j]);
+     printf("\n");
+     }
+
+   if((r1==r2)&&(c1==c2))
+   {
+     for(i=0;i<r1;i++)
+       for(j=0;j<c1;j++)
+         c[i][j] = a[i][j]+b[i][j];
+   
+   printf("Result matrix is \n");
+     for(i=0;i<r1;i++)
+     {
+       for(j=0;j<c1;j++)
+         printf("%d ", c[i][j]);
+       printf("\n");
+     }
+   }
+   else
+      printf("Different matrix size. Addition not possible");
+    return 0;
+}
+
+
+Sample Output 1
+ter the size of the first 2-D array : 2
+3
+Enter the elements of first 2-D array:
+1
+2
+3
+4
+5
+6
+Enter the size of the second 2-D array : 2
+3
+Enter the elements of second 2-D array:
+11
+12
+13
+14
+15
+16
+First matrix is
+1 2 3
+4 5 6
+Second matrix is
+11 12 13
+14 15 16
+Result matrix is
+12 14 16
+18 20 22
+
+Sample output 2
+Enter the size of the first 2-D array : 2
+3
+Enter the elements of first 2-D array:
+1
+2
+3
+4
+5
+6
+Enter the size of the second 2-D array : 1
+2
+Enter the elements of second 2-D array:
+11
+12
+First matrix is
+1 2 3
+4 5 6
+Second matrix is
+11 12
+Different matrix size. Addition not possible
