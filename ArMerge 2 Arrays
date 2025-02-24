@@ -1,0 +1,57 @@
+// Write a C program to concatenate 2 arrays
+
+#include<stdio.h>
+int main()
+{
+   int list1[50],list2[50],list3[100],n1,n2,i,j;
+   printf("Enter how many numbers in array1 : ");
+   scanf("%d", &n1);
+   printf("Enter the %d elements of array1:\n", n1);
+   for(i=0;i<n1;i++)
+      scanf("%d", &list1[i]);
+
+   printf("Enter how many numbers in array2 : ");
+   scanf("%d", &n2);
+   printf("Enter the %d elements of array2:\n", n2);
+   for(i=0;i<n2;i++)
+      scanf("%d", &list2[i]);
+
+   printf("The elemnts of array1 are: ");
+   for(i=0;i<n1;i++)
+      printf("%d ", list1[i]);
+
+   printf("\nThe elemnts of array2 are: ");
+   for(i=0;i<n2;i++)
+      printf("%d ", list2[i]);
+
+   for(i=0;i<n1;i++)
+     list3[i]=list1[i];
+   for(j=0;j<n2;j++,i++)
+     list3[i]=list2[j];
+
+   printf("\nThe elements of concatenated are: ");
+   for(i=0;i<n1+n2;i++)
+      printf("%d ", list3[i]);
+   return 0;
+  }
+
+
+
+
+Sample Output
+Enter how many numbers in array1 : 4
+Enter the 4 elements of array1:
+1
+2
+3
+4
+Enter how many numbers in array2 : 5
+Enter the 5 elements of array2:
+11
+12
+13
+14
+15
+The elemnts of array1 are: 1 2 3 4
+The elemnts of array2 are: 11 12 13 14 15
+The elements of concatenated are: 1 2 3 4 11 12 13 14 15
