@@ -1,0 +1,34 @@
+# Write a C program to read and print the 2-D array
+#include<stdio.h>
+int main()
+{
+   int list[50][50],r,c,i,j;
+   printf("Enter the size of the 2-D array : ");
+   scanf("%d %d", &r, &c);
+   printf("Enter the elements of array:\n");
+
+   for(i=0;i<r;i++)
+     for(j=0;j<c;j++)
+       scanf("%d", &list[i][j]);
+
+   for(i=0;i<r;i++)
+   {
+     for(j=0;j<c;j++)
+       printf("%d ", list[i][j]);
+     printf("\n");
+   }
+   return 0;
+}
+
+Sample Output
+Enter the size of the 2-D array : 2
+3
+Enter the elements of array:
+1
+2
+3
+4
+5
+6
+1 2 3
+4 5 6
