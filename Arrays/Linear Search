@@ -13,8 +13,8 @@ int main()
    for(i=0;i<n;i++)
       scanf("%d", &num[i]);
 
-  // Print the array elemnts
-   printf("The elemnts are: ");
+  // Print the array elements
+   printf("The elements are: ");
    for(i=0;i<n;i++)
       printf("%d ", num[i]);
 
@@ -35,3 +35,24 @@ int main()
     printf("Unsuccessful search");
    return 0;
 }
+
+Sample Output
+Enter the 5 elements:
+11
+12
+13
+14
+15
+The elements are: 11 12 13 14 15
+Enter the element to be searched: 3
+Unsuccessful search
+
+Enter the 5 elements:
+11
+12
+1
+14
+15
+The elements are: 11 12 1 14 15
+Enter the element to be searched: 1
+ The element 1 at index 2
