@@ -1,0 +1,32 @@
+//  Read any n numbers and stored it and array and find the sum of the numbers
+
+#include<stdio.h>
+int main()
+{
+   int num[50],n,i,sum=0;
+   printf("Enter how many numbers  : ");
+   scanf("%d", &n);
+   
+   for(i=0;i<n;i++)
+      scanf("%d", &num[i]);
+      
+   for(i=0;i<n;i++)
+      printf("%d ", num[i]);
+      
+   for(i=0;i<n;i++)
+      sum = sum+num[i];
+      
+   printf("\nSum = %d",sum);
+   return 0;
+}
+
+Sample Output
+Enter how many numbers  : 5
+1
+23
+45
+12
+3
+1 23 45 12 3
+Sum = 84
+
