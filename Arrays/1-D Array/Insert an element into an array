@@ -1,1 +1,42 @@
+// Write a C program to concatenate 2 arrays
 
+#include<stdio.h>
+int main()
+{
+   int list[50],n,x,i,j;
+   # Write a C program to insert an element x at index j in an array
+   
+   printf("Enter how many numbers in the array : ");
+   scanf("%d", &n);
+   
+   printf("Enter the %d elements of array:\n", n);
+   for(i=0;i<n;i++)
+      scanf("%d", &list[i]);
+      
+   printf("Enter the element to be inserted and its index: ");
+   scanf("%d %d", &x, &j);  
+   
+   for(i=n-1;i>=j;i--)
+      list[i+1]=list[i];
+   list[i+1] = x;
+   
+   printf("\nThe array after insertion: ");
+   for(i=0;i<n+1;i++)
+      printf("%d ", list[i]);
+   return 0;
+  }
+
+
+
+Sample Output
+Enter how many numbers in the array : 5
+Enter the 5 elements of array:
+1
+2
+3
+4
+5
+Enter the element to be inserted and its index: 22
+3
+
+The array after insertion: 1 2 3 22 4 5
