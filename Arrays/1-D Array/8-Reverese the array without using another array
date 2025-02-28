@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, num[50], i, temp;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+    
+    printf("Enter the elements of the array : ");
+    for(i=0;i<n;i++)
+       scanf("%d", &num[i]);
+    
+    printf("Original array: ");
+    for (i = 0; i < n; i++) 
+        printf("%d ", num[i]);
+    
+    printf("\n");
+
+    for (i = 0; i < n/2; i++) 
+    {
+        temp = num[i];
+        num[i] = num[n - i - 1];
+        num[n - i - 1] = temp;
+    }
+
+    printf("Reversed array: ");
+    for (i = 0; i < n; i++) 
+    {
+        printf("%d ", num[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+Sample output
+Enter the size of the array: 5
+Enter the elements of the array : 1
+2
+3
+4
+5
+Original array: 1 2 3 4 5
+Reversed array: 1 2 3 4 5
