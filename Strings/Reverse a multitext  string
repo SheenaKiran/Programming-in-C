@@ -1,0 +1,34 @@
+//Write a C program to reverse a multiword text
+
+#include <stdio.h>
+
+int main() {
+    char str[100],strrev[100];
+    int length = 0, i, j;
+
+    // Read the string
+    printf("Enter a string: ");
+    gets(str);  
+
+    // Calculate the length of the string
+    while (str[length] != '\0') 
+    {
+               length++;
+    }
+    printf("\nLength of the string is %d",length);
+    for(i=length-1,j=0;i>=0,j<length;i--,j++)
+    {
+        strrev[j] = str[i];
+    }
+    strrev[j]='\0';
+    printf("\nReverse of the given string is : %s\n", strrev);
+
+    return 0;
+}
+
+
+Sample output
+Enter a string: hello world
+
+Length of the string is 11
+Reverse of the given string is : dlrow olleh
