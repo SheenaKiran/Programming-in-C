@@ -1,0 +1,31 @@
+// Write a C program to count the number of words in a multiword text
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int length = 0, wordcnt = 0;
+
+    // Read the string
+    printf("Enter a string: ");
+    gets(str);  
+
+    // Calculate the length of the string
+    while (str[length] != '\0') 
+    {
+       if(str[length]==' ')
+	{
+            wordcnt++;
+	}
+        length++;
+    }
+   if(str[length]=='\0')
+	wordcnt++;
+    // Output the length of the string
+    printf("number of words in the given string is : %d\n", wordcnt);
+
+    return 0;
+}
+
+Sample output
+Enter a string: hello wworld
+number of words in the given string is : 2
