@@ -1,4 +1,4 @@
-# Write a C program to sort n numbers using bibble sort
+# Write a C program to sort n numbers using bubble sort
 
 #include<stdio.h>
 int main()
