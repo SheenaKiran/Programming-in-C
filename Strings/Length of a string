@@ -1,0 +1,27 @@
+// Write a C program to find the length of a string
+#include <stdio.h>
+
+int main() 
+{
+    char str[100];
+    int length = 0;
+
+    // Read the string
+    printf("Enter a string: ");
+    gets(str);  
+
+    // Calculate the length of the string
+    while (str[length] != '\0') 
+    {
+        length++;
+    }
+
+    // Output the length of the string
+    printf("Length of the string: %d\n", length);
+
+    return 0;
+}
+
+Sample output
+Enter a string: hello world
+Length of the string: 11
