@@ -1,0 +1,29 @@
+// Write a C programto find the average of 3 integers
+
+#include<stdio.h>
+
+float average(int,int,int);
+
+int main()
+{
+	int n1, n2, n3;
+	float res;
+	printf("Enter the numbers:");
+	scanf("%d %d %d",&n1, &n2, &n3);
+	res = average(n1,n2,n3);
+	printf("Average of %d, %d, and %d numbers is %f", n1, n2, n3, res);
+	return 0;
+}
+
+float average(int a, int b, int c)
+{
+ 	float s;
+	s = ((a+b+c)/3.0);
+	return s;
+}
+
+Sample Output
+Enter the numbers:3
+4
+3
+Average of 3, 4, and 3 numbers is 3.333333
