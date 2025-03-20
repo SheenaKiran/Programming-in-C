@@ -1,4 +1,4 @@
-//Write a C program to print the Fibonacci series
+//Write a recursive C program to print the Fibonacci series
 #include <stdio.h>
 
 int fibonacci(int) ;
