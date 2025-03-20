@@ -1,3 +1,4 @@
+//Write a recursive C program to find the factorial of a number 
 #include <stdio.h>
 
 int factorial(int);
