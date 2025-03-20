@@ -1,0 +1,27 @@
+//Write C program  that defines a function to check whether a number is odd or even
+
+#include<stdio.h>
+
+void evenodd(int);
+
+int main()
+{
+	int num;
+	char res[20];
+	printf("Enter the number:");
+	scanf("%d",&num);
+	evenodd(num);
+	return 0;
+}
+
+void evenodd(int a)
+{
+ 	if(a%2==0)
+		printf("%d is even number",a);
+	else
+		printf("%d is odd number",a);;
+}
+
+Sample Output
+Enter the number:4
+4 is even number
