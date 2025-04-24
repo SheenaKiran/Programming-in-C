@@ -1,0 +1,12 @@
+Aspect                 malloc()                                            calloc()
+Purpose           Allocates a block of memory                      Allocates multiple blocks of memory
+Initialization    Does not initialize memory (containsgarbage)     Initializes all bytes to zero
+Syntax            malloc(size in bytes)                            calloc(num element, size of each element)
+Parameters        Single parameter                                 Two parameters
+Speed             Slightly faster (no initialization)              Slightly slower (due to zero initialization)
+
+Example
+// allocates memory for 5 ints (uninitialized)
+int *a = (int *)malloc(5 * sizeof(int)); 
+// allocates memory for 5 ints (all zero)
+int *b = (int *)calloc(5, sizeof(int)); 
