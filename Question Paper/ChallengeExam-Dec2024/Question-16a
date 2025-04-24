@@ -1,0 +1,67 @@
+// Write a C program to create a text file (input text through keyboard).Display the contents and size of the file created.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    FILE *fp;
+    char ch;
+    long fileSize;
+
+    // Step 1: Create and write to the file
+    fp = fopen("output.txt", "w");
+    if (fp == NULL) 
+    {
+        printf("Error opening file for writing.\n");
+        return 1;
+    }
+
+    printf("Enter text to write to the file (press Ctrl+D or Ctrl+Z to end):\n");
+
+    while ((ch = getchar()) != EOF) 
+    {
+        fputc(ch, fp);
+    }
+
+    fclose(fp);
+
+    // Step 2: Open the file to read and display contents
+    fp = fopen("output.txt", "r");
+    if (fp == NULL) 
+    {
+        printf("Error opening file for reading.\n");
+        return 1;
+    }
+
+    printf("\nContents of the file:\n");
+
+    while ((ch = fgetc(fp)) != EOF) 
+    {
+        putchar(ch);
+    }
+
+    // Step 3: Find the size of the file
+    fseek(fp, 0, SEEK_END);
+    fileSize = ftell(fp);
+    fclose(fp);
+
+    printf("\nSize of the file: %ld bytes\n", fileSize);
+
+    return 0;
+}
+
+
+Output
+Enter text to write to the file (press Ctrl+D or Ctrl+Z to end):
+India is my country.
+All Indians are my brothers and sisters.
+I love my country.
+^Z
+
+Contents of the file:
+India is my country.
+All Indians are my brothers and sisters.
+I love my country.
+
+Size of the file: 84 bytes
