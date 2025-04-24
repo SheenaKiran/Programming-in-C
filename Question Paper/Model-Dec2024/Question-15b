@@ -1,0 +1,69 @@
+// Two persons want to access a file "sample.txt". First person want to read the data from the file. The second person want to read and write the data from and to the
+// file simultaneously. Can you help them to do so by writing the corresponding programming codes?
+
+
+// Person 1: Read-Only Access to File 
+#include <stdio.h>
+
+int main() 
+{
+    FILE *fp;
+    char ch;
+
+    // Open file in read mode
+    fp = fopen("example.txt", "r");
+
+    if (fp == NULL) 
+    {
+        printf("Error: Could not open file for reading.\n");
+        return 1;
+    }
+
+    printf("Contents of the file:\n");
+
+    while ((ch = fgetc(fp)) != EOF) 
+    {
+        putchar(ch);
+    }
+
+    fclose(fp);
+    return 0;
+}
+
+//Person 2: Read and Write Access Simultaneously
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    FILE *fp;
+    char ch;
+
+    // Open file in read+write mode (r+ does not create file if it doesn't exist)
+    fp = fopen("example.txt", "r+");
+
+    if (fp == NULL) 
+    {
+        printf("Error: Could not open file for reading and writing.\n");
+        return 1;
+    }
+
+    // Read content first
+    printf("Current contents of the file:\n");
+    while ((ch = fgetc(fp)) != EOF)
+    {
+        putchar(ch);
+    }
+
+    // Move cursor to end for appending data
+    fseek(fp, 0, SEEK_END);
+
+    // Write data to file
+    fprintf(fp, "\nNew line added by Person 2.");
+
+    printf("\nData has been written to the file.\n");
+
+    fclose(fp);
+    return 0;
+}
