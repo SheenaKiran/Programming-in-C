@@ -1,0 +1,29 @@
+//Write a c program snippet to open a file in write mode and check if the file opened successfully. if it fails, print an error message and terminate the program.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *fp;
+
+    // Try to open the file in write mode
+    fp = fopen("example.txt", "w");
+
+    // Check if the file was opened successfully
+    if (fp == NULL) 
+    {
+        printf("Error: Could not open file for writing.\n");
+        exit(1);  // Terminate the program with a non-zero exit code
+    }
+
+    printf("File opened successfully in write mode.\n");
+
+    // Close the file after use
+    fclose(fp);
+
+    return 0;
+}
+
+Output
+File opened successfully in write mode.
