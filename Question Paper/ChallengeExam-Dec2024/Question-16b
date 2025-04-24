@@ -1,0 +1,107 @@
+// A stock file contains item_code, item_name, quantity and reorder_level.Write a C program to create a stock file of N items. Write a function to list
+// items with quantity less than reorder_level.
+
+#include <stdio.h>
+#include <string.h>
+
+// Define structure for stock item
+struct StockItem
+{
+    int item_code;
+    char item_name[25];
+    int quantity;
+    int reorder_level;
+};
+
+// Function to list items with quantity less than reorder level
+void listLowStockItems(const char *filename) {
+    FILE *fp;
+    struct StockItem item;
+
+    fp = fopen(filename, "r");
+    if (fp == NULL)
+    {
+        printf("Error opening file for reading.\n");
+        return;
+    }
+
+    printf("\nItems with quantity less than reorder level:\n");
+    printf("--------------------------------------------------\n");
+    printf("%s \t %s \t %s \t %s\n", "Code", "Name", "Quantity", "Reorder");
+    printf("--------------------------------------------------\n");
+
+    while (fread(&item, sizeof(struct StockItem), 1, fp)) 
+    {
+        if (item.quantity < item.reorder_level) 
+        {
+            printf("%d \t %s \t %d \t %d\n",item.item_code, item.item_name, item.quantity, item.reorder_level);
+        }
+    }
+
+    fclose(fp);
+}
+
+int main() 
+{
+    FILE *fp;
+    struct StockItem item;
+    int n, i;
+
+    printf("Enter number of stock items: ");
+    scanf("%d", &n);
+
+    fp = fopen("stock.txt", "w");
+    if (fp == NULL) 
+    {
+        printf("Error opening file for writing.\n");
+        return 1;
+    }
+
+    for (i = 0; i < n; i++) 
+    {
+        printf("\nEnter details for item %d\n", i + 1);
+        printf("Item code: ");
+        scanf("%d", &item.item_code);
+        printf("Item name: ");
+        scanf(" %s", item.item_name);  
+        printf("Quantity: ");
+        scanf("%d", &item.quantity);
+        printf("Reorder level: ");
+        scanf("%d", &item.reorder_level);
+
+        fwrite(&item, sizeof(struct StockItem), 1, fp);
+    }
+
+    fclose(fp);
+
+    // Call function to list low stock items
+    listLowStockItems("stock.txt");
+
+    return 0;
+}
+
+Output
+Enter number of stock items: 3
+Enter details for item 1
+Item code: 1
+Item name: Apple
+Quantity: 5
+Reorder level: 4
+
+Enter details for item 2
+Item code: 2
+Item name: Orange
+Quantity: 4
+Reorder level: 5
+
+Enter details for item 3
+Item code: Grapes
+Item name: Quantity: 3
+Reorder level: 4
+
+Items with quantity less than reorder level:
+--------------------------------------------------
+Code     Name    Quantity        Reorder
+--------------------------------------------------
+2        Orange          4       5
+2        Grapes          3       4
