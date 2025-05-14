@@ -1,0 +1,27 @@
+State proper reasons to identify whether the given identifiers are valid or not.
+i) 9marks
+ii) Mark 2020
+iii) v4vote
+iv) _csdept
+v) @cse
+vi) AxB
+
+Answer:
+
+9marks	-	 Invalid	
+Identifiers cannot begin with a digit. They must begin with a letter (A–Z, a–z) or an underscore (_).
+
+Mark 2020		
+Identifiers cannot contain spaces. Mark 2020 has a space between Mark and 2020, which is not allowed.
+
+v4vote – Valid
+ Begins with a letter (v) and contains only alphanumeric characters (v, 4, v, o, t, e), which is allowed.
+		
+_csdept – Valid
+Identifiers can begin with an underscore. _csdept uses valid characters and follows the naming rules.
+
+@cse - Invalid	
+Identifiers cannot contain special characters like @. Only letters, digits, and underscores are allowed.
+
+AxB -   Valid 	
+This contains only alphabetic characters (A, x, B), and starts with a letter. No rules are violated.
