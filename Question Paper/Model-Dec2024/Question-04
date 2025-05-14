@@ -1,0 +1,27 @@
+How can a list of strings be stored within a two-dimensional array? How can theindividual strings be processed? What library functions are available to simplify
+string processing?Storing and Processing a List of Strings in a Two-Dimensional Array
+
+Answer:
+
+A list of strings can be stored using a 2D character array, where:
+-	Each row represents a string
+-	Each column represents a character of that string
+char names[3][20] = { "Alice", "Bob", "Charlie"};
+This defines an array to store 3 strings, each with up to 19 characters (+1 for null terminator \0). Memory layout: 3 rows × 20 columns.
+Accessing and Processing Individual Strings
+You can process each string using loops:
+Example – Print Each String:
+for (int i = 0; i < 3; i++)
+ {
+    printf("%s\n", names[i]);
+}
+Example – Print Characters of First String:
+for (int j = 0; j < strlen(names[0]); j++)
+ {
+    printf("%c ", names[0][j]);
+}
+Common Library Functions for String Processing (in <string.h>)
+strlen(str)	-	Returns length of string (excluding \0)
+strcpy(dest, src)	-	Copies one string to another
+strcat(dest, src)	-	Appends one string to another
+strcmp(s1, s2)	-	Compares two strings
