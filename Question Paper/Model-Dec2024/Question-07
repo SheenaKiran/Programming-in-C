@@ -1,0 +1,23 @@
+Suppose a function receives a pointer as an argument. Explain how the function prototype is written. In particular, explain how the data type of the pointer argument
+is represented
+
+Answer:
+
+Function Prototype with Pointer Argument in C
+When a function receives a pointer as an argument, its prototype must clearly state the data type the pointer points to,
+followed by an asterisk * to indicate that it's a pointer.
+
+Syntax:  return_type function_name(data_type *pointer_name);
+   data_type → type of data the pointer points to (int, float, char, etc.)
+   pointer_name → denotes that the parameter is a pointer
+
+Example 1: Pointer to int
+     void update(int *ptr);
+  ptr is a pointer to an int
+  This means the function can modify the original integer value in the caller's memory
+
+
+
+
+
+
