@@ -1,0 +1,21 @@
+Convert the below if-else to conditional operator
+if (first_check)
+{
+"access denied";
+}
+else
+{
+if (second_check)
+{
+"access denied";
+}
+else
+{
+"access granted";
+}
+}
+
+
+Answer:
+
+(first_check) ? "access denied" : ((second_check) ? "access denied" : "access granted");
