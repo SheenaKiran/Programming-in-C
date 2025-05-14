@@ -1,0 +1,14 @@
+Identify the storage class in the below code?
+#include<stdio.h>
+int a;
+int main()
+{
+printf("a=%d",a);
+return 0;
+}
+
+Answer:
+'a' is declared outside any function, including main.
+This makes it a global variable.
+The default storage class for a global variable is extern.
+So, a has the extern storage class.
