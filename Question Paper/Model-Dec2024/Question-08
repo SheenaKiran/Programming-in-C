@@ -1,0 +1,16 @@
+While using the statement, fp = fopen( "myfile.c", "r" ) ; what happens if,
+− ‘myfile.c’ does not exist on the disk
+− ‘myfile.c’ exists on the disk
+
+Answer:
+a) If data.txt does NOT exist on the disk:
+• A new file named data.txt is created.
+• The file is opened in write mode.
+• The file pointer fp now points to this new, empty file.
+• You can now write data to it.
+• If file creation fails (e.g., due to permissions), fp will be NULL.
+(b) If data.txt already EXISTS on the disk:
+• The existing file will be truncated (erased) to zero length.
+• All the previous contents are deleted.
+• The file is effectively cleared, and you start with a blank file.
+• The file pointer fp will point to the beginning of the empty file.
