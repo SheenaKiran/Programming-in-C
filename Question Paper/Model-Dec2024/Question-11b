@@ -1,0 +1,103 @@
+Given a list of cities, their literacy level, and the population, write a program to print
+the list cities sorted lexicographically. Assume duplication in city names. Break the
+ties with the value of literacy level, and then the population
+
+#include <stdio.h>
+#include <string.h>
+
+// Structure to hold city data
+struct City 
+{
+    char name[50];
+    float literacy;
+    int population;
+};
+
+int main()
+{
+    struct City cities[100];
+    int n, i, j;
+
+    // Input number of cities
+    printf("Enter the number of cities: ");
+    scanf("%d", &n);
+
+    // Input data for each city
+    for (i = 0; i < n; i++) 
+    {
+        printf("\nEnter details for city %d:\n", i + 1);
+        printf("Name: ");
+        scanf("%s", cities[i].name);
+        printf("Literacy level: ");
+        scanf("%f", &cities[i].literacy);
+        printf("Population: ");
+        scanf("%d", &cities[i].population);
+    }
+
+    // Sort the array
+    struct City temp;
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = i + 1; j < n; j++) 
+         {
+            int name_cmp = strcmp(cities[i].name, cities[j].name);
+            if (name_cmp > 0 || 
+               (name_cmp == 0 && cities[i].literacy > cities[j].literacy) || 
+               (name_cmp == 0 && cities[i].literacy == cities[j].literacy && cities[i].population > cities[j].population)) 
+                {
+                    // Swap cities[i] and cities[j]
+                    temp = cities[i];
+                    cities[i] = cities[j];
+                    cities[j] = temp;
+                }
+         }
+    }
+
+    // Output the sorted list
+    printf("\nSorted list of cities:\n");
+    printf("%-15s %-15s %-10s\n", "City", "Literacy", "Population");
+    for (i = 0; i < n; i++) 
+    {
+        printf("%-15s %-15.2f %-10d\n", cities[i].name, cities[i].literacy, cities[i].population);
+    }
+
+    return 0;
+}
+
+
+Output
+Enter the number of cities: 5
+
+Enter details for city 1:
+Name: calicut
+Literacy level: 80
+Population: 8000
+
+Enter details for city 2:
+Name: palakkad
+Literacy level: 80
+Population: 8500
+
+Enter details for city 3:
+Name: thrissur
+Literacy level: 90
+Population: 8000
+
+Enter details for city 4:
+Name: ernakulam
+Literacy level: 80
+Population: 9000
+
+Enter details for city 5:
+Name: kottayam
+Literacy level: 80
+Population: 7000
+
+Sorted list of cities:
+City            Literacy        Population
+calicut         80.00           8000
+ernakulam       80.00           9000
+kottayam        80.00           7000
+palakkad        80.00           8500
+thrissur        90.00           8000
+
