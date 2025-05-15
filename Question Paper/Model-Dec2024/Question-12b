@@ -1,0 +1,40 @@
+Write a C program that allows the user to enter a line of text, store it in an array,
+and then display it backward. The line length should be unspecified (terminated by
+pressing the Enter key), but assume it will not exceed 80 characters.
+
+Answer:
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+    char line[81];  // Maximum 80 characters + 1 for '\0'
+    int length, i;
+
+    // Prompt user for input
+    printf("Enter a line of text (max 80 characters):\n");
+    fgets(line, sizeof(line), stdin);  // Read line including spaces
+
+    // Remove newline character if present
+    length = strlen(line);
+   if (line[length - 1] == '\n') 
+   {
+       line[length - 1] = '\0';
+       length--;  // Adjust length after removing newline
+    }
+
+    // Display the line in reverse
+    printf("The line in reverse is:\n");
+    for (i = length - 1; i >= 0; i--) 
+    {
+        putchar(line[i]);
+    }
+
+    return 0;
+}
+
+Output
+Enter a line of text (max 80 characters):
+hello good morning
+The line in reverse is:
+gninrom doog olleh
