@@ -1,0 +1,80 @@
+Define a structure named Vehicle with members model (character array), year
+(integer), and price (float). Create an array of 10 Vehicle structures and write a
+function to accept user input for each vehicle's details and Sort the array in
+descending order based on price.
+
+Answer:
+#include <stdio.h>
+#include <string.h>
+
+// Define the Vehicle structure
+struct Vehicle 
+{
+    char model[50];
+    int year;
+    float price;
+};
+
+// Function to input vehicle details
+void inputVehicles(struct Vehicle vehicles[], int n) 
+{
+    for (int i = 0; i < n; i++) 
+    {
+        printf("Enter details for Vehicle %d:\n", i + 1);
+        printf("Model: ");
+        scanf(" %[^\n]", vehicles[i].model); // To read string with spaces
+        printf("Year: ");
+        scanf("%d", &vehicles[i].year);
+        printf("Price: ");
+        scanf("%f", &vehicles[i].price);
+    }
+}
+
+// Function to sort vehicles in descending order of price
+void sortByPriceDescending(struct Vehicle vehicles[], int n) 
+{
+    struct Vehicle temp;
+    for (int i = 0; i < n - 1; i++) 
+    {
+        for (int j = i + 1; j < n; j++) 
+        {
+            if (vehicles[i].price < vehicles[j].price)
+            {
+                // Swap
+                temp = vehicles[i];
+                vehicles[i] = vehicles[j];
+                vehicles[j] = temp;
+            }
+        }
+    }
+}
+
+// Function to display the list of vehicles
+void displayVehicles(struct Vehicle vehicles[], int n) 
+{
+    printf("\nVehicle List (sorted by price descending):\n");
+    for (int i = 0; i < n; i++) 
+    {
+        printf("Model: %s, Year: %d, Price: %.2f\n",
+               vehicles[i].model, vehicles[i].year, vehicles[i].price);
+    }
+}
+
+int main() 
+{
+    struct Vehicle vehicles[10];
+
+    // Input vehicles
+    inputVehicles(vehicles, 10);
+
+    // Sort vehicles by price descending
+    sortByPriceDescending(vehicles, 10);
+
+    // Display sorted vehicles
+    displayVehicles(vehicles, 10);
+
+    return 0;
+}
+
+
+
