@@ -1,0 +1,57 @@
+Write a C program that reads employee's ID, name, status (‘F’ for full-time and ‘P’
+for part-time) and basic pay. DA and HRA for full-time employees are 75% and
+10% of basic pay respectively. Part-time employees have basic pay only. Print the
+total salary of the employee.
+
+Answer:
+#include <stdio.h>
+
+int main() 
+{
+    int empID;
+    char name[50];
+    char status;
+    float basicPay, da = 0, hra = 0, totalSalary;
+
+    // Read input
+    printf("Enter Employee ID: ");
+    scanf("%d", &empID);
+
+    printf("Enter Employee Name: ");
+    scanf(" %s", name);  
+    printf("Enter Status (F for Full-time, P for Part-time): ");
+    scanf(" %c", &status);
+
+    printf("Enter Basic Pay: ");
+    scanf("%f", &basicPay);
+
+    // Calculate salary based on status
+    if (status == 'F' || status == 'f') 
+    {
+        da = 0.75 * basicPay;   // 75% of basic pay
+        hra = 0.10 * basicPay;  // 10% of basic pay
+    }
+    
+    totalSalary = basicPay + da + hra;
+
+    // Display result
+    printf("\n--- Employee Salary Details ---\n");
+    printf("Employee ID     : %d\n", empID);
+    printf("Employee Name   : %s\n", name);
+    printf("Employee Status : %s\n", (status == 'F' || status == 'f') ? "Full-time" : "Part-time");
+    printf("Total Salary    : %.2f\n", totalSalary);
+
+    return 0;
+}
+
+output
+Enter Employee ID: 1
+Enter Employee Name: Raju
+Enter Status (F for Full-time, P for Part-time): F
+Enter Basic Pay: 2000
+
+--- Employee Salary Details ---
+Employee ID     : 1
+Employee Name   : Raju
+Employee Status : Full-time
+Total Salary    : 3700.00
