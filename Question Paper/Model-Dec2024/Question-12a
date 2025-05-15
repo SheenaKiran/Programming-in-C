@@ -1,0 +1,62 @@
+Write a C program to rotate (re-insert rightmost element at the left) elements of an
+array to the right by n-steps.
+
+Answer:
+#include <stdio.h>
+
+int main() 
+{
+    int arr[100], n, steps;
+
+    // Input number of elements
+    printf("Enter number of elements in the array: ");
+    scanf("%d", &n);
+
+    // Input array elements
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Input number of steps to rotate
+    printf("Enter number of steps to rotate right:Steps should be <= number of elements in the array ");
+    scanf("%d", &steps);
+
+    
+
+    // Right rotate the array by one step, repeat 'steps' times
+    for (int s = 0; s < steps; s++) 
+    {
+        int last = arr[n - 1];
+        for (int i = n - 1; i > 0; i--) 
+        {
+            arr[i] = arr[i - 1];
+        }
+        arr[0] = last;
+    }
+
+    // Print rotated array
+    printf("Array after right rotation by %d steps:\n", steps);
+    for (int i = 0; i < n; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+
+Output:
+Enter number of elements in the array: 5
+Enter 5 elements:
+1
+2
+3
+4
+5
+Enter number of steps to rotate right:Steps should be <= number of elements in the array 4
+Array after right rotation by 4 steps:
+2 3 4 5 1
+
+
