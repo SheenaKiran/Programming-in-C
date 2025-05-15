@@ -1,0 +1,81 @@
+Develop a function that takes the two dates as input and compares them. The
+function should return 1 if date1 is earlier than date2, return 0 if date1 is later than
+date2. Write code to display whether date1 is earlier, later, or the same as date2
+based on the function’s result.
+
+Answer:
+
+#include <stdio.h>
+
+// Define a structure to represent a date
+struct Date 
+{
+    int day;
+    int month;
+    int year;
+};
+
+// Function to compare two dates
+int compareDates(struct Date date1, struct Date date2) 
+{
+    if (date1.year < date2.year)
+        return 1;
+    else if (date1.year > date2.year)
+        return 0;
+    else 
+    {
+        if (date1.month < date2.month)
+            return 1;
+        else if (date1.month > date2.month)
+            return 0;
+        else 
+        {
+            if (date1.day < date2.day)
+                return 1;
+            else if (date1.day > date2.day)
+                return 0;
+            else
+                return -1;
+        }
+    }
+}
+
+int main() 
+{
+    struct Date date1, date2;
+    int result;
+
+    // Input dates
+    printf("Enter date1 (DD MM YYYY): ");
+    scanf("%d %d %d", &date1.day, &date1.month, &date1.year);
+
+    printf("Enter date2 (DD MM YYYY): ");
+    scanf("%d %d %d", &date2.day, &date2.month, &date2.year);
+
+    // Compare dates
+    result = compareDates(date1, date2);
+
+    // Display result
+    if (result == 1)
+        printf("Date1 is earlier than Date2.\n");
+    else if (result == 0)
+        printf("Date1 is later than Date2.\n");
+    else
+        printf("Date1 is the same as Date2.\n");
+
+    return 0;
+}
+
+
+Output
+Enter date1 (DD MM YYYY): 15 09 2020
+Enter date2 (DD MM YYYY): 29 08 1998
+Date1 is later than Date2.
+
+Enter date1 (DD MM YYYY): 23 09 2020
+Enter date2 (DD MM YYYY): 14 09 2025
+Date1 is earlier than Date2.
+
+Enter date1 (DD MM YYYY): 23 09 2020
+Enter date2 (DD MM YYYY): 23 09 2020
+Date1 is the same as Date2.
