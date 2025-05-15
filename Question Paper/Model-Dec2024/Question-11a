@@ -1,0 +1,49 @@
+Write a C program to reverse the content of an array without using another array. 
+
+Answer:
+#include <stdio.h>
+
+int main() 
+{
+    int arr[100], n, i, temp;
+
+    // Input the size of the array
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    // Input array elements
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Reverse the array in-place
+    for(i = 0; i < n / 2; i++) 
+    {
+        temp = arr[i];
+        arr[i] = arr[n - i - 1];
+        arr[n - i - 1] = temp;
+    }
+
+    // Output the reversed array
+    printf("Reversed array:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+
+Output
+Enter the number of elements: 5
+Enter 5 elements:
+3
+4
+5
+1
+2
+Reversed array:
+2 1 5 4 3
