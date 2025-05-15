@@ -1,0 +1,29 @@
+Write a C program that calculates and prints the result of the following expression:
+result = 5 * (6 + 2) / 4 - 3. Explain how parentheses affect the precedence of
+operators in this expression.
+
+#include <stdio.h>
+
+int main()
+{
+    int result;
+    result = 5 * (6 + 2) / 4 - 3;
+    printf("Result of the expression is: %d\n", result);
+    return 0;
+}
+
+output
+Result of the expression is: 7
+
+Explanaton
+result = 5 * (6 + 2) / 4 - 3;
+Evaluate it step-by-step while respecting operator precedence and parentheses:
+Parentheses First:
+(6 + 2) = 8
+So the expression becomes:
+result = 5 * 8 / 4 - 3;
+Multiplication and Division (Same Precedence, Left to Right):
+5 * 8 = 40
+40 / 4 = 10
+Subtraction:
+10 - 3 = 7
