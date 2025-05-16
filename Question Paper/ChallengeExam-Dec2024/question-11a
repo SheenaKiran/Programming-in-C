@@ -1,0 +1,40 @@
+A set of N numbers are stored in an integer array. Write a C program to find the sum of odd numbers present in the array.
+
+Answer:
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, sum = 0;
+
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++) 
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Calculate sum of odd numbers
+    for (i = 0; i < n; i++) 
+    {
+        if (arr[i] % 2 != 0) 
+        {
+            sum += arr[i];
+        }
+    }
+
+    printf("Sum of odd numbers in the array = %d\n", sum);
+
+    return 0;
+}
+
+Output
+Enter the number of elements in the array: 5
+Enter 5 integers:
+3
+5
+2
+3
+1
+Sum of odd numbers in the array = 12
