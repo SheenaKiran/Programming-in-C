@@ -1,0 +1,22 @@
+What will be the output of the following C program. Justify your answer.
+void main() {
+  int i=1234, j=0;
+  while(i>0) {
+    i/=10; j++;
+  }
+printf("%d %d",i,j) }
+
+
+Step-by-Step Execution:
+
+Initial values:
+i = 1234, j = 0
+
+Loop (while(i > 0)):
+  1st iteration: i = 1234 / 10 = 123, j = 1
+  2nd iteration: i = 123 / 10 = 12, j = 2
+  3rd iteration: i = 12 / 10 = 1, j = 3
+  4th iteration: i = 1 / 10 = 0, j = 4
+Loop ends (i = 0)
+Now, i = 0, j = 4
+Output of the program : i = 0, j = 4
