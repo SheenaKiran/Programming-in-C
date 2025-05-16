@@ -1,0 +1,26 @@
+Write a C program using bitwise operator to count the number of 1's in a binary representation of a given number
+
+
+Answer:
+#include<stdio.h>
+int main()
+{
+	int num, c=0, count;
+
+	// Reas the number
+	printf("Enter the number");
+	scanf("%d", &num);
+
+	//Count the numberof 1's using bitwise AND and right shift
+	while(num!=0)
+	{
+		count = num & 1;
+		c = c+count;
+		num = num>>1;
+	}
+	printf("Number of 1's is %d", c);
+}
+
+Output:
+Enter the number8
+Numbe rof 1's is 1
