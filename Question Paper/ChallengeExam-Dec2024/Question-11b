@@ -1,0 +1,55 @@
+A set of N numbers are stored in an array. Write a C program to arrange the numbers in descending order using bubble sort algorithm.
+
+Answer
+#include <stdio.h>
+
+int main() 
+{
+    int arr[100], n, i, j, temp;
+
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++) 
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Bubble sort in descending order
+    for (i = 0; i < n - 1; i++) 
+    {
+        for (j = 0; j < n - i - 1; j++) 
+        {
+            if (arr[j] < arr[j + 1]) 
+            {
+                // Swap arr[j] and arr[j+1]
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    // Display sorted array
+    printf("Array in descending order:\n");
+    for (i = 0; i < n; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+Output:
+Enter the number of elements in the array: 5
+Enter 5 integers:
+4
+6
+3
+71
+2
+Array in descending order:
+71 6 4 3 2
