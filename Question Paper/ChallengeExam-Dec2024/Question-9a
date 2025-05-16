@@ -1,0 +1,15 @@
+What will be the output of the following C program? Justify your answer.
+#include<stdio.h>
+void main() {
+int a=5, b=8, c=9, d;
+d=a++ + --
+b + c++;
+printf("%d %d %d %d", a,b,c,d)}
+
+
+Answer:
+a++ → uses 5, then a becomes 6
+--b → decrements b to 7, uses 7
+c++ → uses 9, then c becomes 10
+So, d = 5 + 7 + 9 = 21
+Final output : 6 7 10 21
