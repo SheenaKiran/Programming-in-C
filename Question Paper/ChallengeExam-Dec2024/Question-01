@@ -1,0 +1,17 @@
+Identify the valid and invalid identifiers in C, given below. Justify your answer.
+i) mark1   ii) _123   iii) $price   iv) rank list   v) Xyz     vi) -name  
+
+Answer:
+i)	mark1 – Valid
+         Starts with a letter and contains letters and digits only
+ii)	 _123 -  Valid
+         Starts with an underscore and contains digits allowed
+iii)	$price – Invalid
+         $ is not a valid character in C identifiers
+iv)	rank list – Invalid
+         Contains a space, which is not allowed in identifiers
+v) Xyz - Valid	
+         Starts with a letter and has only valid characters	
+vi) -name – Invalid	
+         Begins with a hyphen -, which is not allowed
+
