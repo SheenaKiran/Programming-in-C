@@ -1,0 +1,23 @@
+What will be the output of the following C function, if the function was called 5 times in the main program? Justify your answer.
+void fun() {
+static int count = 0;
+count++;
+printf("Count: %d\n", count); }
+
+Answer:
+
+The variable count is declared as static:
+It retains its value between function calls.
+It is initialized only once, when the function is first called.
+On each call to fun():
+The value of count increases by 1.
+The updated value is printed.
+
+Step-by-step process
+Function Call	    count Value
+  1st call	           1
+  2nd call	           2
+  3rd call	           3
+  4th call	           4
+  5th call	           5
+
