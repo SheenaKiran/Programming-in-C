@@ -1,0 +1,46 @@
+Compare the difference between structure and union data types in C.
+
+Answer:
+             Structure                                                          Union
+1. Declared using struct keyword                               1. Declared using union keyword
+2. All data members in structure are active at time            2. Only one data member is active at a time
+3. Each member within a structure is assigned                  3. All members within a union share the same
+   its own unique storage area                                    storage area within the computer's memory.
+                                                                  Union help to save memory
+4. Total size of structure = size of all the                   4. Total size of structure = size of the largest member
+   members in the structure                                       in the union
+5. Members can be accessed at any time                         5. Members can be accessed soon after its
+                                                                  value is stored(assigned). (Only the value
+                                                                  of member last stored is found in the storage.
+                                                                  (i.e.only one value can be stored in a
+                                                                   union at a time))
+6. It is useful to declare a compound data type                6. It is useful in certain cases where the user will
+   to group data members related to a person                      select any one data member in the group of
+   or item.                                                        data members.            
+7. It is commonly used in most of the applications             7. It is not commonly used.
+
+                                                                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
