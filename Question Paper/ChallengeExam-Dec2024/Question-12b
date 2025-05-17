@@ -1,0 +1,49 @@
+Write a C program to check whether the given string is palindrome or not without using any string manipulation 
+function#include <stdio.h>
+
+Answer:
+
+int main() 
+{
+    char str[100];
+    int start = 0, end, isPalindrome = 1;
+
+    // Read string input
+    printf("Enter a string: ");
+    scanf("%[^\n]", str);  // Read input including spaces
+
+    // Find length manually
+    end = 0;
+    while (str[end] != '\0') 
+    {
+        end++;
+    }
+    end--;  // Set end to last valid character index
+
+    // Compare characters from both ends
+    while (start < end)
+    {
+        if (str[start] != str[end]) 
+        {
+            isPalindrome = 0;  // Not a palindrome
+            break;
+        }
+        start++;
+        end--;
+    }
+
+    // Display result
+    if (isPalindrome)
+        printf("The string is a palindrome.\n");
+    else
+        printf("The string is not a palindrome.\n");
+
+    return 0;
+}
+
+Output:
+Enter a string: malayalam
+The string is a palindrome.
+
+Enter a string: cemp
+The string is not a palindrome.
