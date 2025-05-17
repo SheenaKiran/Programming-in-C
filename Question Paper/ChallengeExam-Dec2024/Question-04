@@ -1,0 +1,29 @@
+Write a C program to find length of a given string without using any string functions.
+
+Answer:
+#include <stdio.h>
+
+int main() 
+{
+    char str[100];
+    int i = 0;
+
+    // Input the string
+    printf("Enter a string: ");
+    scanf("%[^\n]", str);  // Read string with spaces
+
+    // Count characters until null character '\0' is encountered
+    while (str[i] != '\0') 
+   {
+        i++;
+    }
+
+    // Output the length
+    printf("Length of the string is: %d\n", i);
+
+    return 0;
+}
+
+Output
+Enter a string: cemp alappuzha
+Length of the string is: 14
