@@ -1,0 +1,104 @@
+Define a structure named Student with members roll_no, name, total_mark, percentage & grade. 
+Create 10 student records, input roll_no, name & total_mark (out of 500) only.
+Write a C functions to evaluate and update percentage & grade of every student. Grades are calculated as follows.
+grade ='O' if percentage>=90
+grade = 'A' if percentage>=80 and <90
+grade = 'B' if percentage>=70 and <80
+grade = 'C' if percentage>=60 and <70
+grade = 'D' if percentage>=50 and <60
+grade = 'E' if percentage>=40 and <50
+grade = 'F' if percentage<40
+
+Answer:
+
+#include <stdio.h>
+
+struct Student
+{
+    int roll_no;
+    char name[50];
+    float total_mark;
+    float percentage;
+    char grade;
+};
+
+// Function to calculate percentage and return updated structure
+struct Student calculatePercentage(struct Student s) 
+{
+    s.percentage = (s.total_mark / 500.0f) * 100;
+    return s;
+}
+
+// Function to assign grade and return updated structure
+struct Student assignGrade(struct Student s) 
+{
+    if (s.percentage >= 90)
+        s.grade = 'O';
+    else if (s.percentage >= 80)
+        s.grade = 'A';
+    else if (s.percentage >= 70)
+        s.grade = 'B';
+    else if (s.percentage >= 60)
+        s.grade = 'C';
+    else if (s.percentage >= 50)
+        s.grade = 'D';
+    else if (s.percentage >= 40)
+        s.grade = 'E';
+    else
+        s.grade = 'F';
+    return s;
+}
+
+int main() 
+{
+    struct Student students[100];
+    int n;
+    printf("Enter the number of students");
+    scanf("%d",&n);
+    // Input student details
+    for (int i = 0; i < n; i++) 
+    {
+        printf("\nEnter details for student %d:\n", i + 1);
+        printf("Roll No: ");
+        scanf("%d", &students[i].roll_no);
+        printf("Name: ");
+        scanf(" %[^\n]", students[i].name);
+        printf("Total Marks (out of 500): ");
+        scanf("%f", &students[i].total_mark);
+
+        // Update structure using functions
+        students[i] = calculatePercentage(students[i]);
+        students[i] = assignGrade(students[i]);
+    }
+
+    // Display all student records
+    printf("\n%-10s %-20s %-12s %-12s %-6s\n", "Roll No", "Name", "Marks", "Percentage", "Grade");
+    for (int i = 0; i < n; i++) 
+    {
+        printf("%-10d %-20s %-12.2f %-12.2f %-6c\n",
+               students[i].roll_no,
+               students[i].name,
+               students[i].total_mark,
+               students[i].percentage,
+               students[i].grade);
+    }
+
+    return 0;
+}
+
+Output
+Enter the number of students2
+
+Enter details for student 1:
+Roll No: 1
+Name: arya
+Total Marks (out of 500): 456
+
+Enter details for student 2:
+Roll No: 2
+Name: anu
+Total Marks (out of 500): 467
+
+Roll No    Name                 Marks        Percentage   Grade
+1          arya                 456.00       91.20        O
+2          anu                  467.00       93.40        O
