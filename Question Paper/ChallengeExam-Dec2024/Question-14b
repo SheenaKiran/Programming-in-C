@@ -1,0 +1,21 @@
+Write afunctonto display the details of all students with grade =  'O' in the above student record
+
+Answer:
+
+void displayOutstandingStudents(struct Student students[], int size) 
+{
+    printf("\nStudents with Grade 'O':\n");
+    printf("%-10s %-20s %-12s %-12s %-6s\n", "Roll No", "Name", "Marks", "Percentage", "Grade");
+    for (int i = 0; i < size; i++) 
+    {
+        if (students[i].grade == 'O')
+        {
+            printf("%-10d %-20s %-12.2f %-12.2f %-6c\n",
+                   students[i].roll_no,
+                   students[i].name,
+                   students[i].total_mark,
+                   students[i].percentage,
+                   students[i].grade);
+        }
+    }
+}
