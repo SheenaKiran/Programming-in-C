@@ -1,0 +1,41 @@
+Write a C function to evaluate the series 1 + x + x^2+...+x^n, given x and n.
+
+Answer:
+
+#include <stdio.h>
+
+// Function to calculate the series: 1 + x + x^2 + ... + x^n
+float evaluateSeries(int x, int n) {
+    float sum = 1;     // Start with x^0 = 1
+    float term = 1;    // Holds current term (x^i)
+
+    for (int i = 1; i <= n; i++) 
+    {
+        term = term * x;  // Compute x^i
+        sum = sum + term; // Add x^i to sum
+    }
+
+    return sum;
+}
+
+// Example usage
+int main() 
+{
+    int x, n;
+
+    printf("Enter value of x: ");
+    scanf("%d", &x);
+
+    printf("Enter value of n: ");
+    scanf("%d", &n);
+
+    float result = evaluateSeries(x, n);
+    printf("Sum of the series is: %.2f\n", result);
+
+    return 0;
+}
+
+Output:
+Enter value of x: 2
+Enter value of n: 3
+Sum of the series is: 15.00
