@@ -1,0 +1,38 @@
+What are the different ways to declare and initialize a single-dimensional array?
+
+Answer:
+
+A single-dimensional array is a collection of elements (of the same type) stored in contiguous memory locations and accessed using a single index.
+Declaration Without Initialization
+int arr[5];
+-	Declares an integer array of size 5.
+-	Values are uninitialized (contain garbage values if not initialized).
+
+Declaration With Complete Initialization
+int arr[5] = {10, 20, 30, 40, 50};
+-	Declares and initializes all elements.
+-	Array size is 5, and all values are explicitly provided.
+
+Declaration With Partial Initialization
+int arr[5] = {10, 20};
+-	The first two elements are initialized to 10 and 20.
+-	Remaining elements are automatically initialized to 0.
+
+Declaration With Compiler-Deduced Size
+int arr[] = {5, 10, 15, 20};
+-	Compiler determines size automatically (in this case, 4).
+-	Useful when the number of elements is known at compile time.
+
+Initialization Using Loops
+int arr[5];
+for (int i = 0; i < 5; i++) 
+{
+    arr[i] = i * 2;
+}
+-	Elements are initialized dynamically (e.g., using logic or input).
+-	Allows more control and flexibility.
+
+Zero Initialization Using {0}
+int arr[5] = {0};
+-	Initializes the first element to 0, and the rest are automatically set to 0.
+-	Common trick to quickly zero-out an array.
